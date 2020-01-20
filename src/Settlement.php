@@ -38,5 +38,17 @@ class Settlement extends Entity
 
         return $this->request('GET', $relativeUrl, $options);
     }
+
+    /**
+     * Get transfers against a settlement
+     * @param  array  $options
+     * @return array
+     */
+    public function transfers($settlement_id)
+    {
+        $relativeUrl = 'transfers?recipient_settlement_id='.$settlement_id;
+
+        return $this->request('GET', $relativeUrl);
+    }
 }
 
